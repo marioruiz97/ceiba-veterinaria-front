@@ -20,7 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,    
+    CommonModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -38,7 +38,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
   ],
-  exports: [    
+  exports: [
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
