@@ -27,6 +27,13 @@ mat-sidenav {
   height: 100%;
 }
 
+mat-sidenav.gt-sm {
+  width: 50vw;
+}
+mat-sidenav.lt-sm {
+  width: 80vw;
+}
+
 app-toolbar {
   position: fixed;
   top: 0;

@@ -1,0 +1,17 @@
+header {
+  min-height: 45vh;
+  max-height: 50vh;
+  background-image: url("/assets/img/lists-background.jpg");
+  background-attachment: fixed;
+  background-position: 50% 25%;
+  background-size: cover;
+}
+
+header h1 {
+  margin: 0 auto;
+  padding: 2% 1%;
+  font-size: 2.5rem;
+  font-weight: 400 !important;
+  text-align: center;
+  letter-spacing: 0;
+}
