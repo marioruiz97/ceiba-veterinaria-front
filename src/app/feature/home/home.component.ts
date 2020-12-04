@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   cards = [
     {
-      avatar: 'next_week',
+      avatar: 'book_online',
       title: 'Agendamiento de citas',
       subtitle: 'Asigna las citas veterinarias',
       img: '/assets/img/assign.jpg',
-      button: 'Agendar',
+      button: 'Agendar Cita',
       urlTo: '/citas',
     },
     {
-      avatar: 'assessment',
+      avatar: 'people',
       title: 'Clientes y Mascotas',
       subtitle: 'Crea los clientes y sus mascotas',
       img: '/assets/img/pets.jpg',
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       urlTo: '/responsables',
     },
     {
-      avatar: 'people_outline',
+      avatar: 'assignment_ind',
       title: 'Veterinario',
       subtitle: 'Ingresa la información de los veterinarios',
       img: '/assets/img/veterinary.jpg',
@@ -32,21 +32,13 @@ export class HomeComponent implements OnInit {
       urlTo: '/veterinarios',
     },
     {
-      avatar: 'assignment_ind',
+      avatar: 'next_week',
       title: 'Tipos de Cita',
       subtitle: 'Gestiona los diferentes tipos de cita',
       img: '/assets/img/appointment-type.jpg',
       button: 'Ir a tipos de cita',
       urlTo: '/tipo-citas',
-    },
-    {
-      avatar: 'work_outline',
-      title: 'Maestros',
-      subtitle: 'Gestiona los diferentes maestros del aplicativo',
-
-      button: 'Ir a maestros',
-      urlTo: '/maestros',
-    },
+    }
   ];
 
   constructor() {}

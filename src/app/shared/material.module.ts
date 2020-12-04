@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,8 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    FlexLayoutModule,
+    CommonModule,    
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -40,8 +38,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
   ],
-  exports: [
-    FlexLayoutModule,
+  exports: [    
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

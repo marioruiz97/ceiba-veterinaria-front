@@ -7,11 +7,11 @@ export interface Options {
   headers?: HttpHeaders;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class HttpService {
   private API_ENDPOINT = environment.endpoint;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(protected httpClient: HttpClient) {}
 
   public createDefaultOptions(): Options {
     return {

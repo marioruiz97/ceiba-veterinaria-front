@@ -2,7 +2,7 @@ export interface ErrorHttp {
   [title: string]: string;
 }
 
-export const HTTP_ERRORES_CODIGO: error = {
+export const HTTP_ERRORES_CODIGO: ErrorHttp = {
   NO_HAY_INTERNET: 'Lo sentimos, no se detecta conexión a internet',
   PETICION_FALLIDA: 'Error inesperado en la petición',
   400: 'El servidor no puede procesar la petición por un error de sintaxis del cliente.',

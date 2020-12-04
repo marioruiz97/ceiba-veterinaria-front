@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ManejadorError } from './interceptor/manejador-error';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ManejadorError],
-  imports: [CommonModule],
+  declarations: [],
+  imports: [CommonModule, RouterModule],
+  exports: [],
+  providers: [{ provide: ErrorHandler, useClass: ManejadorError }],
 })
 export class CoreModule {}

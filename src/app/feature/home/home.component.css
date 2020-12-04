@@ -17,9 +17,13 @@
   letter-spacing: 0;
 }
 
+.home-img {
+  height: 55vh;
+}
+
 .home-img:hover {
   filter: grayscale(0.7);
-  -webkit-filter: grayscale(0.7);
+  -webkit-filter: grayscale(0.7);  
 }
 
 .mat-card-avatar {

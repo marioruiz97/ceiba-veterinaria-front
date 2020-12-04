@@ -5,12 +5,12 @@ import { TipoCitaService } from './tipo-cita.service';
 describe('TipoCitaService', () => {
   let service: TipoCitaService;
 
-  beforeEach(() => {
+  /* beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(TipoCitaService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });
+  }); */
 });

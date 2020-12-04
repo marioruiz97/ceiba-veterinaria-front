@@ -12,7 +12,7 @@ export class ManejadorError implements ErrorHandler {
     this.imprimirErrorConsola(mensajeError);
   }
 
-  private mensajePorDefecto(error: any) {
+  private mensajePorDefecto(error: any): string {
     if (error instanceof HttpErrorResponse) {
       if (!navigator.onLine) {
         return HTTP_ERRORES_CODIGO.NO_HAY_INTERNET;
