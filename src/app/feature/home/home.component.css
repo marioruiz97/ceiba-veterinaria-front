@@ -1,20 +1,23 @@
 .home-header {
   min-height: 90vh;
   max-height: 90vh;
-  /*background-image: url("/assets/img/homepage-header.jpg");
-      background-attachment: fixed;
-      background-position: start;
-      background-size: cover;*/
+  background-image: url("/assets/img/lists-background.jpg");
+  background-attachment: fixed;
+  background-position: 50% 25%;
+  background-size: cover;
+  filter: grayscale(0.35);
+  -webkit-filter: grayscale(0.35);
 }
 
 .home-header h1 {
   background-color: (0, 0, 0, 0.4);
   color: #fff;
-  text-shadow: 1.5px 0px 0px var(--darken-blue);
+  text-shadow: 2.5px 2px 0.5px var(--darken-blue);
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
   letter-spacing: 0;
+  line-height: normal;
 }
 
 .home-img {
@@ -23,7 +26,7 @@
 
 .home-img:hover {
   filter: grayscale(0.7);
-  -webkit-filter: grayscale(0.7);  
+  -webkit-filter: grayscale(0.7);
 }
 
 .mat-card-avatar {

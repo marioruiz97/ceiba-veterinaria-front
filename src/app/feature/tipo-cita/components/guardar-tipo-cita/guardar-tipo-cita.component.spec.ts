@@ -1,20 +1,20 @@
 /* import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListarTipoCitaComponent } from './listar-tipo-cita.component';
+import { GuardarTipoCitaComponent } from './guardar-tipo-cita.component';
 
-describe('ListarTipoCitaComponent', () => {
-  let component: ListarTipoCitaComponent;
-  let fixture: ComponentFixture<ListarTipoCitaComponent>;
+describe('GuardarTipoCitaComponent', () => {
+  let component: GuardarTipoCitaComponent;
+  let fixture: ComponentFixture<GuardarTipoCitaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListarTipoCitaComponent ]
+      declarations: [ GuardarTipoCitaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListarTipoCitaComponent);
+    fixture = TestBed.createComponent(GuardarTipoCitaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
