@@ -12,10 +12,17 @@ const routes: Routes = [
         (mod) => mod.TipoCitaModule
       ),
   },
+  {
+    path: 'responsables',
+    loadChildren: () =>
+      import('@feature/responsable-mascota/responsable-mascota.module').then(
+        (mod) => mod.ResponsableMascotaModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

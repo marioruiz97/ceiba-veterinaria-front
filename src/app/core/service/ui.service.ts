@@ -1,3 +1,4 @@
+import { ConfirmDialogData } from './../model/confirm-dialog-data';
 import { ConfirmDialogComponent } from './../components/confirm-dialog/confirm-dialog.component';
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -6,8 +7,8 @@ import {
   MatSnackBarRef,
   TextOnlySnackBar,
 } from '@angular/material/snack-bar';
-import { ConfirmDialogData } from '@core/model/confirm-dialog-data';
 import { Observable, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ import { Observable, Subject } from 'rxjs';
 export class UiService {
   loadingState = new Subject<boolean>();
 
-  constructor(private snackBar: MatSnackBar, private dialog: MatDialog) {}
+  constructor(private snackBar: MatSnackBar, private dialog: MatDialog, private router: Router) { }
 
   mostrarSnackBar(
     message: string,
@@ -40,11 +41,9 @@ export class UiService {
         .catch((err) => {
           this.loadingState.next(false);
           exito.next(false);
-          /* if (err.status !== 403) {
-          const message = err.error ? err.error.message : 'Ha ocurrido un error interno';
+          const message = err.error ? err.error.mensaje : 'Ha ocurrido un error interno';
           const errors: string[] = err.error && err.error.errors ? err.error.errors : [];
-          this.showConfirm({ title: 'Error', message, errors, confirm: 'Ok' });
-        } */
+          this.mostrarError({ title: 'Error', message, errors, confirm: 'Ok' });
         });
     });
   }
@@ -61,4 +60,13 @@ export class UiService {
       },
     });
   }
+
+  volverAListar(ruta: string): void {
+    this.router.navigate([ruta]);
+  }
+
+  mostrarError(data: ConfirmDialogData): void {
+    this.mostrarConfirmDialog({ ...data });
+  }
+
 }

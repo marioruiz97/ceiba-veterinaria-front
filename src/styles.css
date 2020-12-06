@@ -44,3 +44,30 @@ app-toolbar {
 tr.mat-row:hover {
   background-color: #eee;
 }
+
+/** Estilos para formularios, para aplicarse deben tener el class form-group en la etiqueta <div> que contiene a los mat-form-fields */
+p.invalid-form,
+div.invalid-form {
+  text-align: center !important;
+  color: var(--darken-orange);
+  font-weight: 400;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group mat-form-field {
+  padding: 10px 5px;
+  min-width: 47%;
+}
+
+.form-action button {
+  min-width: 30%;
+}
+
+@media (max-width: 600px) {
+  .form-group mat-form-field {
+    width: 100%;
+  }
+}

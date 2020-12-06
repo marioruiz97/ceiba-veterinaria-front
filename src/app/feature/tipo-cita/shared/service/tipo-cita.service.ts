@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { AppConstants as Constant } from '@shared/app.constants';
 import { TipoCita } from '../model/tipo-cita';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class TipoCitaService {
@@ -13,7 +12,6 @@ export class TipoCitaService {
 
   constructor(
     private httpService: HttpService,
-    private router: Router,
     private uiService: UiService
   ) { }
 
@@ -79,9 +77,8 @@ export class TipoCitaService {
   }
 
   mostrarError(err: any): void {
-    console.log(err);
     const message = err.error ? err.error.mensaje : 'No se han podido obtener datos';
-    this.uiService.mostrarConfirmDialog({
+    this.uiService.mostrarError({
       title: 'Error',
       message,
       confirm: 'Ok',
@@ -90,6 +87,6 @@ export class TipoCitaService {
   }
 
   volverAListar(): void {
-    this.router.navigate(['tipo-citas']);
+    this.uiService.volverAListar('tipo-citas');
   }
 }
