@@ -1,7 +1,7 @@
 import { ResponsableMascota } from './../model/responsable-mascota';
 import { Observable } from 'rxjs';
 import { UiService } from '@core/service/ui.service';
-import { HttpService } from './../../../../core/service/http.service';
+import { HttpService } from '@core/service/http.service';
 import { Injectable } from '@angular/core';
 import { AppConstants as Constant } from '@shared/app.constants';
 

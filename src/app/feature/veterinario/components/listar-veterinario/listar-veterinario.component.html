@@ -1,5 +1,5 @@
-<button class="m-auto" mat-button routerLink="/responsables/guardar" color="primary">
-    <mat-icon>add</mat-icon> Crear Responsable
+<button class="m-auto" mat-button routerLink="/veterinarios/guardar" color="primary">
+    <mat-icon>add</mat-icon> Crear Veterinario
 </button>
 <div fxLayout="column">
     <div class="px-1 px-sm-5 list-button" fxLayoutAlign="space-between">
@@ -10,10 +10,10 @@
     </div>
 
     <table mat-table [dataSource]="datasource" matSort class="mat-elevation-z8">
-        <caption style="display: none;">Responsables mascota</caption>
-        <ng-container matColumnDef="idResponsable">
-            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Id responsable </th>
-            <td mat-cell *matCellDef="let doc"> {{doc.idResponsable}} </td>
+        <caption style="display: none;">Veterinarios</caption>
+        <ng-container matColumnDef="idVeterinario">
+            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Id Veterinario </th>
+            <td mat-cell *matCellDef="let doc"> {{doc.idVeterinario}} </td>
         </ng-container>
         <ng-container matColumnDef="identificacion">
             <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Identificación </th>
@@ -39,7 +39,7 @@
         <ng-container matColumnDef="acciones">
             <th scope="col" mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let doc">
-                <button mat-icon-button color="primary" [routerLink]="['/responsables/guardar/'+doc.idResponsable]"
+                <button mat-icon-button color="primary" [routerLink]="['/veterinarios/guardar/'+doc.idVeterinario]"
                     matTooltip="Editar">
                     <mat-icon class="mat-18">edit</mat-icon>
                 </button>

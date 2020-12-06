@@ -19,6 +19,13 @@ const routes: Routes = [
         (mod) => mod.ResponsableMascotaModule
       ),
   },
+  {
+    path: 'veterinarios',
+    loadChildren: () =>
+      import('@feature/veterinario/veterinario.module').then(
+        (mod) => mod.VeterinarioModule
+      ),
+  },
 ];
 
 @NgModule({
