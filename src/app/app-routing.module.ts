@@ -26,6 +26,13 @@ const routes: Routes = [
         (mod) => mod.VeterinarioModule
       ),
   },
+  {
+    path: 'citas',
+    loadChildren: () =>
+      import('@feature/cita-veterinaria/cita-veterinaria.module').then(
+        (mod) => mod.CitaVeterinariaModule
+      ),
+  },
 ];
 
 @NgModule({

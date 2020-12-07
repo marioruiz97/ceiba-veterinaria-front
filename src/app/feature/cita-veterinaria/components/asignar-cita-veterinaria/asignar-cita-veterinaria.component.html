@@ -1,0 +1,69 @@
+<section>
+    <form autocomplete="off" [formGroup]="citaForm" (ngSubmit)="onSubmit()" fxLayoutAlign="center">
+        <mat-card class="mat-elevation-z8 py-4" fxFlex="80" fxFlex.lt-sm="100">
+            <mat-card-content class="form-group p-2" fxLayout="column" fxLayoutAlign="center center">
+                <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Código asignado</mat-label>
+                        <input matInput formControlName="codigoCita" />
+                        <mat-hint>El código es autoasignado por el sistema</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>Fecha cita</mat-label>
+                        <input matInput [min]="minDate" [matDatepicker]="fechaCita" formControlName="fechaCita" />
+                        <mat-datepicker-toggle matSuffix [for]="fechaCita"></mat-datepicker-toggle>
+                        <mat-datepicker #fechaCita></mat-datepicker>
+                        <mat-hint>Ingresa la fecha de la cita</mat-hint>
+                        <mat-error>La fecha es obligatoria</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex="48" fxFlex.lt-md="100">
+                        <mat-label>Mascota</mat-label>
+                        <mat-select formControlName="idMascota">
+                            <mat-option [value]="item.idMascota" *ngFor="let item of mascotas">
+                                {{item.nombre + ' Responsable: ' + item.responsableMascota?.nombre + ' ' + item.responsableMascota?.apellido1}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>Seleccione La mascota</mat-hint>
+                        <mat-error>Campo obligatorio</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex="48" fxFlex.lt-md="100">
+                        <mat-label>Veterinario</mat-label>
+                        <mat-select formControlName="idVeterinario">
+                            <mat-option [value]="item.idVeterinario" *ngFor="let item of veterinarios">{{item.nombre + ' ' + item.apellido1}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>Seleccione el veterinario</mat-hint>
+                        <mat-error>Campo obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group" fxLayoutAlign="center">
+                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex>
+                        <mat-label>Tipo de cita</mat-label>
+                        <mat-select formControlName="idTipoCita">
+                            <mat-option [value]="item.idTipoCita" *ngFor="let item of tiposCita">{{item.nombre}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>Seleccione el tipo de cita</mat-hint>
+                        <mat-error>Campo obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+
+            <p class="invalid-form" *ngIf="citaForm.invalid">
+                **El formulario posee errores, verifica los campos.
+            </p>
+            <mat-card-actions class="form-action mt-4" fxLayoutAlign="center" fxLayout.lt-sm="column">
+                <button class="m-2" type="button" mat-raised-button (click)="goBack()" color="warn" *ngIf="!isWaiting">
+                    <mat-icon>arrow_back</mat-icon>Regresar al listado
+                </button>
+                <button class="m-2" type="submit" mat-raised-button color="primary" [disabled]="!citaForm.valid"
+                    *ngIf="!isWaiting">
+                    <mat-icon>save</mat-icon> Asignar Cita
+                </button>
+                <mat-spinner *ngIf="isWaiting"></mat-spinner>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</section>

@@ -1,3 +1,4 @@
+import { CitaVeterinariaModule } from './feature/cita-veterinaria/cita-veterinaria.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { ResponsableMascotaModule } from '@feature/responsable-mascota/responsab
     CoreModule,
     TipoCitaModule,
     ResponsableMascotaModule,
+    CitaVeterinariaModule
   ],
   providers: [],
   bootstrap: [AppComponent],

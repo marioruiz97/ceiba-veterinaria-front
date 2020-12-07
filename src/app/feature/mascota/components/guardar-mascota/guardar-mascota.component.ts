@@ -26,7 +26,6 @@ export class GuardarMascotaComponent implements OnInit {
 
   ngOnInit(): void {
     this.iniciarFormulario();
-    console.log('data', this.data)
     if (this.data.idResponsableMascota) {
       this.idResponsable = this.data.idResponsableMascota;
     } else if (this.data.responsableMascota) {
