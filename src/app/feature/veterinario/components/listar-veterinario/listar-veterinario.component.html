@@ -12,8 +12,8 @@
     <table mat-table [dataSource]="datasource" matSort class="mat-elevation-z8">
         <caption style="display: none;">Veterinarios</caption>
         <ng-container matColumnDef="idVeterinario">
-            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Id Veterinario </th>
-            <td mat-cell *matCellDef="let doc"> {{doc.idVeterinario}} </td>
+            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm> Id Veterinario </th>
+            <td mat-cell *matCellDef="let doc" fxHide.lt-sm> {{doc.idVeterinario}} </td>
         </ng-container>
         <ng-container matColumnDef="identificacion">
             <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Identificación </th>
@@ -24,8 +24,8 @@
             <td mat-cell *matCellDef="let doc"> {{doc.nombre}} </td>
         </ng-container>
         <ng-container matColumnDef="apellido1">
-            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm> Apellidos </th>
-            <td mat-cell *matCellDef="let doc" fxHide.lt-sm>
+            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+            <td mat-cell *matCellDef="let doc">
                 {{doc.apellido1 + ' ' + doc.apellido2}} </td>
         </ng-container>
         <ng-container matColumnDef="telefonoContacto">

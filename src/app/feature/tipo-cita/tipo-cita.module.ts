@@ -1,5 +1,5 @@
 import { TipoCitaService } from './shared/service/tipo-cita.service';
-import { SharedModule } from './../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { NgModule } from '@angular/core';
 
 import { TipoCitaRoutingModule } from './tipo-cita-routing.module';

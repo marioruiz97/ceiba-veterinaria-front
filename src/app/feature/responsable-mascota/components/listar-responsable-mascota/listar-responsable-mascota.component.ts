@@ -1,5 +1,5 @@
+import { ResponsableMascota } from '@feature/responsable-mascota/shared/model/responsable-mascota';
 import { ResponsableMascotaService } from './../../shared/service/responsable-mascota.service';
-import { ResponsableMascota } from './../../shared/model/responsable-mascota';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -13,6 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class ListarResponsableMascotaComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  private responsable!: ResponsableMascota;
   private subscripciones: Subscription[] = [];
   displayedColumns = ['idResponsable', 'identificacion', 'nombre', 'apellido1', 'telefonoContacto', 'acciones'];
   datasource = new MatTableDataSource<ResponsableMascota>();
@@ -20,7 +21,19 @@ export class ListarResponsableMascotaComponent implements OnInit, AfterViewInit,
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  constructor(private servicio: ResponsableMascotaService) { }
+  constructor(private responsableMascotaService: ResponsableMascotaService) { }
+
+  blankResponsable(): void {
+    this.responsable = null as any;
+  }
+
+  setResponsable(responsable: ResponsableMascota): void {
+    this.responsable = responsable;
+  }
+
+  get _responsable(): ResponsableMascota {
+    return this.responsable;
+  }
 
   ngOnInit(): void {
     this.consultar();
@@ -33,9 +46,13 @@ export class ListarResponsableMascotaComponent implements OnInit, AfterViewInit,
 
   consultar(): void {
     this.subscripciones.push(
-      this.servicio.consultar().subscribe(list => this.datasource.data = list,
-        err => this.servicio.mostrarError(err)
+      this.responsableMascotaService.consultar().subscribe(list => this.datasource.data = list,
+        err => this.responsableMascotaService.mostrarError(err)
       ));
+  }
+
+  cargarListaMascotas(responsable: ResponsableMascota): void {
+    this.setResponsable(responsable);
   }
 
   doFilter($event: any): void {

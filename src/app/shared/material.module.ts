@@ -19,6 +19,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
 
 @NgModule({
   declarations: [],
@@ -42,7 +47,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSortModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   exports: [
     MatToolbarModule,
@@ -63,7 +70,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSortModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatMomentDateModule
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' },
   ],
 })
 export class MaterialModule { }

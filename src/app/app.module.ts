@@ -7,7 +7,7 @@ import { HomeComponent } from '@feature/home/home.component';
 import { TipoCitaModule } from '@feature/tipo-cita/tipo-cita.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ResponsableMascotaModule } from './feature/responsable-mascota/responsable-mascota.module';
+import { ResponsableMascotaModule } from '@feature/responsable-mascota/responsable-mascota.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],

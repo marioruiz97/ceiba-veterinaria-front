@@ -41,7 +41,7 @@ export class UiService {
         .catch((err) => {
           this.loadingState.next(false);
           exito.next(false);
-          const message = err.error ? err.error.mensaje : 'Ha ocurrido un error interno';
+          const message = err.error ? err.error.mensaje : 'Ha ocurrido un error, contacta un administrador';
           const errors: string[] = err.error && err.error.errors ? err.error.errors : [];
           this.mostrarError({ title: 'Error', message, errors, confirm: 'Ok' });
         });

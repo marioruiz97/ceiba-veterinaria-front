@@ -20,14 +20,14 @@
             <td mat-cell *matCellDef="let doc"> {{doc.nombre}} </td>
         </ng-container>
         <ng-container matColumnDef="tarifaBasica">
-            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm> Tarifa Básica </th>
-            <td mat-cell *matCellDef="let doc" fxHide.lt-sm>
+            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Tarifa Básica </th>
+            <td mat-cell *matCellDef="let doc">
                 {{doc.tarifaBasica}}
             </td>
         </ng-container>
         <ng-container matColumnDef="descripcionBreve">
-            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
-            <td mat-cell *matCellDef="let doc">
+            <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm> Descripción </th>
+            <td mat-cell *matCellDef="let doc" fxHide.lt-sm>
                 <p class="px-2">{{doc.descripcionBreve}}</p>
             </td>
         </ng-container>
