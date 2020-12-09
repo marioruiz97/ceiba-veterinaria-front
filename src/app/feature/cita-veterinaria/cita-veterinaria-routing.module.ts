@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: CitaVeterinariaComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'citas/listar' },
+      { path: '', pathMatch: 'full', redirectTo: '/citas/listar' },
       { path: 'listar', component: ListarCitaVeterinariaComponent },
       { path: 'asignar', component: AsignarCitaVeterinariaComponent },
     ]

@@ -6,6 +6,7 @@ import { CitaVeterinariaService } from '@feature/cita-veterinaria/shared/service
 import { Subscription } from 'rxjs';
 import { Veterinario } from '@feature/veterinario/shared/model/veterinario';
 import { Mascota } from '@feature/mascota/shared/model/mascota';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-asignar-cita-veterinaria',
@@ -43,6 +44,7 @@ export class AsignarCitaVeterinariaComponent implements OnInit, OnDestroy {
     this.citaForm = new FormGroup({
       codigoCita: new FormControl({ value: '', disabled: true }),
       fechaCita: new FormControl('', [Validators.required]),
+      horaCita: new FormControl('', [Validators.required]),
       idVeterinario: new FormControl('', [Validators.required]),
       idMascota: new FormControl('', [Validators.required]),
       idTipoCita: new FormControl('', [Validators.required]),
@@ -79,7 +81,12 @@ export class AsignarCitaVeterinariaComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.service.asignar(this.citaForm.value);
+    const cita = this.citaForm.value;
+    const fechaCita: Moment = cita.fechaCita;
+    let hora: string = cita.horaCita;
+    hora = hora.split(':', 1)[0];
+    fechaCita.add(parseInt(hora, 10), 'hours');
+    this.service.asignar(cita);
   }
 
   ngOnDestroy(): void {

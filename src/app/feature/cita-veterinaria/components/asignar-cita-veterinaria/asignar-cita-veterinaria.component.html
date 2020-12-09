@@ -8,38 +8,19 @@
                         <input matInput formControlName="codigoCita" />
                         <mat-hint>El código es autoasignado por el sistema</mat-hint>
                     </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex>
-                        <mat-label>Fecha cita</mat-label>
-                        <input matInput [min]="minDate" [matDatepicker]="fechaCita" formControlName="fechaCita" />
-                        <mat-datepicker-toggle matSuffix [for]="fechaCita"></mat-datepicker-toggle>
-                        <mat-datepicker #fechaCita></mat-datepicker>
-                        <mat-hint>Ingresa la fecha de la cita</mat-hint>
-                        <mat-error>La fecha es obligatoria</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
-                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex="48" fxFlex.lt-md="100">
-                        <mat-label>Mascota</mat-label>
-                        <mat-select formControlName="idMascota">
-                            <mat-option [value]="item.idMascota" *ngFor="let item of mascotas">
-                                {{item.nombre + ' Responsable: ' + item.responsableMascota?.nombre + ' ' + item.responsableMascota?.apellido1}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-hint>Seleccione La mascota</mat-hint>
-                        <mat-error>Campo obligatorio</mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex="48" fxFlex.lt-md="100">
+                    <mat-form-field appearance="outline" class="select-group">
                         <mat-label>Veterinario</mat-label>
                         <mat-select formControlName="idVeterinario">
-                            <mat-option [value]="item.idVeterinario" *ngFor="let item of veterinarios">{{item.nombre + ' ' + item.apellido1}}
+                            <mat-option [value]="item.idVeterinario" *ngFor="let item of veterinarios">
+                                {{item.nombre + ' ' + item.apellido1}}
                             </mat-option>
                         </mat-select>
                         <mat-hint>Seleccione el veterinario</mat-hint>
                         <mat-error>Campo obligatorio</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxLayoutAlign="center">
-                    <mat-form-field appearance="outline" class="select-group my-3" fxFlex>
+                <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" class="select-group">
                         <mat-label>Tipo de cita</mat-label>
                         <mat-select formControlName="idTipoCita">
                             <mat-option [value]="item.idTipoCita" *ngFor="let item of tiposCita">{{item.nombre}}
@@ -47,6 +28,33 @@
                         </mat-select>
                         <mat-hint>Seleccione el tipo de cita</mat-hint>
                         <mat-error>Campo obligatorio</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="select-group">
+                        <mat-label>Mascota</mat-label>
+                        <mat-select formControlName="idMascota">
+                            <mat-option [value]="item.idMascota" *ngFor="let item of mascotas">
+                                {{item.nombre + ' - Responsable: ' + item.responsableMascota?.nombre + ' ' + item.responsableMascota?.apellido1}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>Seleccione La mascota</mat-hint>
+                        <mat-error>Campo obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha cita</mat-label>
+                        <input matInput [min]="minDate" [matDatepicker]="fechaCita" formControlName="fechaCita" />
+                        <mat-datepicker-toggle matSuffix [for]="fechaCita"></mat-datepicker-toggle>
+                        <mat-datepicker #fechaCita></mat-datepicker>
+                        <mat-hint>Ingresa la fecha de la cita</mat-hint>
+                        <mat-error>La fecha es obligatoria</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Hora cita</mat-label>
+                        <input id="timePicker" matInput [ngxTimepicker]="hora" formControlName="horaCita" min="08:00 am"
+                            max="05:00 pm" [disableClick]="true" readonly />
+                        <mat-icon class="toggle-picker" matSuffix (click)="hora.open()">schedule</mat-icon>
+                        <ngx-material-timepicker [hoursOnly]="true" #hora></ngx-material-timepicker>
                     </mat-form-field>
                 </div>
             </mat-card-content>

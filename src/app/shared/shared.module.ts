@@ -5,6 +5,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LayoutModule,
     FlexLayoutModule,
     MaterialModule,
+    NgxMaterialTimepickerModule
   ],
   exports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LayoutModule,
     FlexLayoutModule,
     MaterialModule,
+    NgxMaterialTimepickerModule
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
