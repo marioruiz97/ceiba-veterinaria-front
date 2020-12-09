@@ -31,6 +31,7 @@ export class ListarCitaVeterinariaComponent implements OnInit, AfterViewInit, On
   ngOnInit(): void {
     this.consultar();
     this.setSortingAccesor();
+    this.datasource.filterPredicate = this.createFilter();
   }
 
   ngAfterViewInit(): void {
@@ -60,6 +61,20 @@ export class ListarCitaVeterinariaComponent implements OnInit, AfterViewInit, On
         default: return item.codigoCita;
       }
     };
+  }
+
+  private createFilter(): (data: CitaVeterinaria, filter: string) => boolean {
+    const filterFunction = (data: CitaVeterinaria, filter: string): boolean => {
+      const codigocita = data.codigoCita.toString().indexOf(filter.trim().toLowerCase()) !== -1;
+      const medico = data.medicoVeterinario.nombre.trim().toLowerCase().concat(' ' + data.medicoVeterinario.apellido1.trim().toLowerCase())
+        .indexOf(filter.trim().toLowerCase()) !== -1;
+      const mascota = data.mascota.nombre.trim().toLowerCase().concat(' ' + data.mascota.responsableMascota?.nombre.trim().toLowerCase())
+        .indexOf(filter.trim().toLowerCase()) !== -1;
+      const tipoCita = data.tipoCita.nombre.trim().toLowerCase().indexOf(filter.trim().toLowerCase()) !== -1;
+      const valorFinal = data.valorFinal.toString().indexOf(filter.trim().toLowerCase()) !== -1;
+      return codigocita || medico || mascota || tipoCita || valorFinal;
+    };
+    return filterFunction;
   }
 
 

@@ -5,3 +5,8 @@
 .toggle-picker {
   cursor: pointer;
 }
+
+.time-hint {
+  color: #fff;
+  font-weight: 400;
+}
