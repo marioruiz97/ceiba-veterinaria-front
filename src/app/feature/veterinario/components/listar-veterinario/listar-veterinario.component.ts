@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-listar-veterinario',
   templateUrl: './listar-veterinario.component.html',
-  styleUrls: ['./listar-veterinario.component.css']
+  styleUrls: []
 })
 export class ListarVeterinarioComponent implements OnInit, AfterViewInit, OnDestroy {
 

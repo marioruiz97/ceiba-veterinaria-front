@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-listar-tipo-cita',
   templateUrl: './listar-tipo-cita.component.html',
-  styleUrls: ['./listar-tipo-cita.component.css']
+  styleUrls: []
 })
 export class ListarTipoCitaComponent implements OnInit, AfterViewInit, OnDestroy {
 

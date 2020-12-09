@@ -34,7 +34,7 @@ export class UiService {
     return new Observable((exito) => {
       promise
         .then((res: any) => {
-          this.mostrarSnackBar(mensaje); // TODO: agregar param
+          this.mostrarSnackBar(mensaje);
           this.loadingState.next(false);
           exito.next(true);
         })
@@ -48,9 +48,7 @@ export class UiService {
     });
   }
 
-  mostrarConfirmDialog(
-    data: ConfirmDialogData
-  ): MatDialogRef<ConfirmDialogComponent> {
+  mostrarConfirmDialog(data: ConfirmDialogData): MatDialogRef<ConfirmDialogComponent> {
     return this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: data.title,

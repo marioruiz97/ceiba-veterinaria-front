@@ -9,7 +9,7 @@ import { ResponsableMascota } from '@feature/responsable-mascota/shared/model/re
 @Component({
   selector: 'app-guardar-responsable-mascota',
   templateUrl: './guardar-responsable-mascota.component.html',
-  styleUrls: ['./guardar-responsable-mascota.component.css']
+  styleUrls: []
 })
 export class GuardarResponsableMascotaComponent implements OnInit, OnDestroy {
   private curId!: number;

@@ -42,7 +42,7 @@ app-toolbar {
 }
 
 tr.mat-row:hover {
-  background-color: #eee;
+  background-color: var(--light-gray);
 }
 
 /** Estilos para formularios, para aplicarse deben tener el class form-group en la etiqueta <div> que contiene a los mat-form-fields */

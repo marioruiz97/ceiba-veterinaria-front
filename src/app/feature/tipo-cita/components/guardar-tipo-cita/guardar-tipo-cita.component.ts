@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-guardar-tipo-cita',
   templateUrl: './guardar-tipo-cita.component.html',
-  styleUrls: ['./guardar-tipo-cita.component.css']
+  styleUrls: []
 })
 export class GuardarTipoCitaComponent implements OnInit, OnDestroy {
 

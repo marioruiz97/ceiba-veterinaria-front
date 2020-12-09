@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-listar-cita-veterinaria',
   templateUrl: './listar-cita-veterinaria.component.html',
-  styleUrls: ['./listar-cita-veterinaria.component.css'],
+  styleUrls: [],
 })
 export class ListarCitaVeterinariaComponent implements OnInit, AfterViewInit, OnDestroy {
 

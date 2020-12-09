@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-listar-responsable-mascota',
   templateUrl: './listar-responsable-mascota.component.html',
-  styleUrls: ['./listar-responsable-mascota.component.css']
+  styleUrls: []
 })
 export class ListarResponsableMascotaComponent implements OnInit, AfterViewInit, OnDestroy {
 

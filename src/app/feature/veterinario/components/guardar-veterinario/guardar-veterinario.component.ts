@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-guardar-veterinario',
   templateUrl: './guardar-veterinario.component.html',
-  styleUrls: ['./guardar-veterinario.component.css']
+  styleUrls: []
 })
 export class GuardarVeterinarioComponent implements OnInit, OnDestroy {
 
