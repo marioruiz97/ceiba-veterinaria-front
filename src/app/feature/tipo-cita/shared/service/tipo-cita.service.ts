@@ -38,7 +38,7 @@ export class TipoCitaService {
   modificar(data: TipoCita, idTipo: number): void {
     this.uiService
       .configurarSnackBar(
-        this.httpService.patchRequest(`${this.comandoPath}/${idTipo}`, data), 'Se ha modificado tipo de cita con éxito'
+        this.httpService.putRequest(`${this.comandoPath}/${idTipo}`, data), 'Se ha modificado tipo de cita con éxito'
       ).subscribe((exito) => {
         if (exito) {
           this.volverAListar();

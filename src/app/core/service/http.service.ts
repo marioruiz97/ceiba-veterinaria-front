@@ -29,9 +29,9 @@ export class HttpService {
       .toPromise();
   }
 
-  patchRequest<T, R>(path: string, data: T): Promise<R> {
+  putRequest<T, R>(path: string, data: T): Promise<R> {
     return this.httpClient
-      .patch<R>(
+      .put<R>(
         `${this.API_ENDPOINT}/${path}`,
         data,
         this.createDefaultOptions()

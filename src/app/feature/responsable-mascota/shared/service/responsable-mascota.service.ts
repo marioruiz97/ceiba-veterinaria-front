@@ -37,7 +37,7 @@ export class ResponsableMascotaService {
   modificar(data: ResponsableMascota, idResponsable: number): void {
     this.uiService
       .configurarSnackBar(
-        this.httpService.patchRequest(`${this.comandoPath}/${idResponsable}`, data), 'Se ha modificado responsable con éxito'
+        this.httpService.putRequest(`${this.comandoPath}/${idResponsable}`, data), 'Se ha modificado responsable con éxito'
       ).subscribe((exito) => {
         if (exito) {
           this.volverAListar();

@@ -37,7 +37,7 @@ export class VeterinarioService {
   modificar(data: Veterinario, idVeterinario: number): void {
     this.uiService
       .configurarSnackBar(
-        this.httpService.patchRequest(`${this.comandoPath}/${idVeterinario}`, data), 'Se ha modificado veterinario con éxito'
+        this.httpService.putRequest(`${this.comandoPath}/${idVeterinario}`, data), 'Se ha modificado veterinario con éxito'
       ).subscribe((exito) => {
         if (exito) {
           this.volverAListar();
