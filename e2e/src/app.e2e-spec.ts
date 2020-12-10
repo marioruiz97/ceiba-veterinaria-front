@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
+  it('mostrar mensaje de bienvenida', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('veterinaria-front app is running!');
+    expect((await page.getTitleText()).split(' ')[1].trim()).toEqual('Ceiba');
   });
 
   afterEach(async () => {
