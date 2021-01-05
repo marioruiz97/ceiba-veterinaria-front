@@ -31,14 +31,19 @@ describe('Flujos asignacion de cita', () => {
             await citaPage.obtenerLista('idTipoCita').click().then(() => {
                 citaPage.seleccionarOpcion('CITA GENERAL ');
             });
-            await citaPage.obtenerLista('idMascota').click();
-            citaPage.seleccionarOpcion(' Nala - Responsable: GLORIA BEODYA ');
+            await citaPage.obtenerLista('idMascota').click().then(() => {
+                citaPage.seleccionarOpcion(' mascota modificada - Responsable: Prueba Prueba ');
+            });
             citaPage.obtenerCampo('fechaCita').sendKeys('18/12/2020');
-            await citaPage.modalHora().click();
-            await citaPage.botonSeleccionarHora().click();
+            await browser.wait(EC.visibilityOf(citaPage.modalHora()), 5000).then(async () => {
+                citaPage.modalHora().click();
+                await browser.wait(EC.visibilityOf(citaPage.botonSeleccionarHora()), 5000).then(() => {
+                    citaPage.botonSeleccionarHora().click();
+                });
+            });
         }).then(async _ => {
             await browser.sleep(1000);
-            await citaPage.obtenerBotonGuardar().click();
+            await browser.wait(EC.elementToBeClickable(citaPage.obtenerBotonGuardar()), 20000).then(() => citaPage.obtenerBotonGuardar().click());
             const snackBar = citaPage.obtenerMensajeModal();
             await browser.wait(EC.visibilityOf(snackBar), 10000);
             snackBar.getText().then((val) => {

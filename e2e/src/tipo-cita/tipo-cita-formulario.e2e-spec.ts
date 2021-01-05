@@ -23,7 +23,7 @@ describe('Flujo crear tipo de cita', () => {
             await browser.sleep(1500);
             await formularioPage.obtenerBotonGuardar().click();
             const snackBar = formularioPage.obtenerMensajeModal();
-            await browser.wait(EC.visibilityOf(snackBar), 30000);
+            await browser.wait(EC.visibilityOf(snackBar), 35000);
             snackBar.getText().then((val) => {
                 expect(val).toEqual('Se ha creado tipo de cita con éxito');
             });

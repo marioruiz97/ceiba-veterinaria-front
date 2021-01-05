@@ -25,7 +25,7 @@ export class AsignacionCitaPage {
     }
 
     modalHora(): ElementFinder {
-        return element(by.css('.mat-form-field-suffix mat-icon[matsuffix]')); // .toggle-picker
+        return element(by.css('.mat-form-field-suffix .toggle-picker[matsuffix]')); // .toggle-picker
     }
 
     botonSeleccionarHora(): ElementFinder {
