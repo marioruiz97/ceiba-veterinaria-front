@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     },
     {
       avatar: 'assignment_ind',
-      title: 'Veterinario',
+      title: 'Veterinarios',
       subtitle: 'Ingresa la información de los veterinarios',
       img: '/assets/img/veterinary.jpg',
       button: 'Ir a crear veterinarios',
