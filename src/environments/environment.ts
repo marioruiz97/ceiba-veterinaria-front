@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://localhost:8090'
+  endpoint: 'http://localhost:8090/api'
+  // endpoint: 'https://veterinaria-ceiba.azurewebsites.net/api'
 };
 
 /*

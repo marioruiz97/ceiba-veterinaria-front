@@ -1,0 +1,6 @@
+{
+    "/api/*": {
+        "target": "https://peliculas-back.azurewebsites.net",
+        "secure": false
+    }
+}
